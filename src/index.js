@@ -1,1 +1,5 @@
-export button from './component/button.vue'
+import btn from './component/btn.vue'
+
+export default {
+    btn
+}

@@ -1,0 +1,6 @@
+{
+    "type":"frontend",
+    "spa": true,
+    "entryJSExt":".js",
+    "entryCSSExt":".styl"
+}

@@ -2,13 +2,13 @@
   "name": "va-ui",
   "version": "0.0.1",
   "description": "responsive vue component library",
-  "main": "src/index.js",
+  "main": "dist/va-ui.js",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "build": "cross-env NODE_ENV=production webpack",
     "prepublish": "npm run clean && npm run build",
     "lint": "eslint src",

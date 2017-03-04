@@ -3,7 +3,17 @@ let path = require('path')
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 let entry = path.join(__dirname, 'src', 'index.js')
-let dist = path.join(__dirname, 'dist')
+let dist = path.join(__dirname, 'lib')
+
+let scssLoaders = [
+    { loader: 'css-loader' },
+    { loader: 'sass-loader' }
+]
+
+let sassLoaders = [
+    { loader: 'css-loader' },
+    { loader: 'sass-loader', options: { indentedSyntax: true } }
+]
 
 module.exports = {
     entry,
@@ -21,15 +31,22 @@ module.exports = {
                 options: {
                     loaders: {
                         scss: ExtractTextPlugin.extract({
-                            use: 'css-loader!sass-loader',
+                            use: scssLoaders,
                             fallback: 'vue-style-loader'
                         }),
                         sass: ExtractTextPlugin.extract({
-                            use: 'css-loader!sass-loader?indentedSyntax',
+                            use: sassLoaders,
                             fallback: 'vue-style-loader'
                         })
                     }
                 }
+            },
+            {
+                test: /\.(scss|sass)/,
+                loader: ExtractTextPlugin.extract({
+                    use: scssLoaders,
+                    fallback: 'style-loader'
+                })
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -44,7 +61,7 @@ module.exports = {
     output: {
         path: dist,
         libraryTarget: "umd",
-        filename: "[name]-[hash:8].js"
+        filename: "va-ui.js"
     },
     performance: {
         hints: false
@@ -56,7 +73,8 @@ module.exports = {
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({
-            debug: false
+            debug: false,
+            minimize:true
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -68,6 +86,6 @@ module.exports = {
                 comments: false
             }
         }),
-        new ExtractTextPlugin('[name]-[hash:8].css')
+        new ExtractTextPlugin('va-ui.css')
     ]
 }

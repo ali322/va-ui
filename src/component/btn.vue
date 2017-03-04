@@ -1,6 +1,6 @@
 <template>
     <div class="btn-comp">
-        <button>im a button</button>
+        <button @click="increase">im a button</button>
         <p>clicked {{count}} times</p>
     </div>
 </template>
@@ -17,12 +17,15 @@
     }
 </script>
 <style lang="scss" scoped>
-    button {
-        background: #CCC;
-        border: 1px solid #666;
-    }
-    p {
-        margin: 8px 0;
-        line-height: 22px;
+    .btn-comp{
+        button {
+            background: #CCC;
+            border: 1px solid #666;
+            font-size:14px;
+        }
+        p {
+            margin: 8px 0;
+            line-height: 22px;
+        }
     }
 </style>
