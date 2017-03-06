@@ -6,22 +6,23 @@
 </template>
 <script>
     export default {
-        data(){
-            return {count:0}
+        data() {
+            return { count: 0 }
         },
-        methods:{
-            increase(){
+        methods: {
+            increase() {
                 this.count += 1
             }
         }
     }
+
 </script>
 <style lang="scss" scoped>
-    .btn-comp{
+    .btn-comp {
         button {
             background: #CCC;
             border: 1px solid #666;
-            font-size:14px;
+            font-size: 14px;
         }
         p {
             margin: 8px 0;
