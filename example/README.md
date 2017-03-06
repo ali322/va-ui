@@ -1,8 +1,6 @@
-#Frontend Boilerplate
-[![Build Status](https://travis-ci.org/ali322/frontend-boilerplate.svg?branch=master)](https://travis-ci.org/ali322/frontend-boilerplate)
-[![Dependency Status](https://gemnasium.com/badges/github.com/ali322/frontend-boilerplate.svg)](https://gemnasium.com/github.com/ali322/frontend-boilerplate)
+## va-ui example
 
-yet another simple boilerplate for frontend project [中文文档](./README_zh.md)
+[中文文档](./README_zh.md)
 
 Develop
 ===
